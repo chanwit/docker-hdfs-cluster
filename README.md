@@ -1,11 +1,11 @@
-#Apache Yarn 2.6.0 cluster Docker image
+#Apache HDFS 2.6.0 cluster Docker image
 
 # Build the image
 
 If you'd like to try directly from the Dockerfile you can build the image as:
 
 ```
-sudo docker build  -t yarn-cluster .
+sudo docker build  -t hdfs-cluster .
 ```
 
 # Start an Apache Yarn namenode container
@@ -13,7 +13,7 @@ sudo docker build  -t yarn-cluster .
 In order to use the Docker image you have just build or pulled use:
 
 ```
-sudo docker run -i -t --name namenode -h namenode yarn-cluster /etc/bootstrap.sh -bash -namenode
+sudo docker run -i -t --name namenode -h namenode hdfs-cluster /etc/bootstrap.sh -bash -namenode
 ```
 
 You should now be able to access the Hadoop Admin UI at
