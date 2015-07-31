@@ -1,9 +1,9 @@
-# Creates pseudo distributed hadoop 2.6.0
+# Creates pseudo distributed HDFS 2.6.0
 #
-# sudo docker build -t yarn_cluster .
+# sudo docker build -t aiyara/hdfs-cluster .
 
 FROM sequenceiq/pam:centos-6.5
-MAINTAINER Luciano Resende lresende@apache.org
+MAINTAINER Chanwit Kaewkasi chanwit@gmail.com
 
 USER root
 
@@ -48,8 +48,8 @@ ADD core-site.xml $HADOOP_PREFIX/etc/hadoop/core-site.xml
 #RUN sed s/HOSTNAME/localhost/ /usr/local/hadoop/etc/hadoop/core-site.xml.template > /usr/local/hadoop/etc/hadoop/core-site.xml
 ADD hdfs-site.xml $HADOOP_PREFIX/etc/hadoop/hdfs-site.xml
 
-ADD mapred-site.xml $HADOOP_PREFIX/etc/hadoop/mapred-site.xml
-ADD yarn-site.xml $HADOOP_PREFIX/etc/hadoop/yarn-site.xml
+# ADD mapred-site.xml $HADOOP_PREFIX/etc/hadoop/mapred-site.xml
+# ADD yarn-site.xml $HADOOP_PREFIX/etc/hadoop/yarn-site.xml
 
 RUN $HADOOP_PREFIX/bin/hdfs namenode -format
 
